@@ -3,3 +3,4 @@ Flask-Wtf
 Flask-Sqlalchemy
 Flask-Script
 requests
+gunicorn==20.0.4
