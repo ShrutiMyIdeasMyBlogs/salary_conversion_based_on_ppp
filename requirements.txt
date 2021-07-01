@@ -1,0 +1,5 @@
+Flask==1.1.2
+Flask-Wtf
+Flask-Sqlalchemy
+Flask-Script
+requests

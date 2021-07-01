@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>PPP Conversion</title>
+<link rel="stylesheet" href="static/css/app.css">
+</head>
+<body>
+<h1>Salary converter based on PPP</h1>
+<form method="POST" action="{{ url_for('display_result') }}" >
+    {{ form.hidden_tag() }}
+    {{ form.csrf_token }}
+    {{ form.country_from.label }}
+    {{ form.country_from }}
+    <ul>
+    {% for error in form.country_from.errors %}
+        <li style="color:red;">{{ error }}</li>
+    {% endfor %}
+    </ul>
+    {{ form.csrf_token }}
+    {{ form.salary.label }}
+    {{ form.salary }}
+    <ul>
+    {% for error_name in form.salary.errors %}
+        <li style="color:red;">{{ error_name }}</li>
+    {% endfor %}
+    </ul>
+    {{ form.csrf_token }}
+    {{ form.country_to.label }}
+    {{ form.country_to }}
+    <ul>
+    {% for error in form.country_to.errors %}
+        <li style="color:red;">{{ error }}</li>
+    {% endfor %}
+    </ul>
+    <div>
+    <input type="submit" value="Submit" name="submit" >
+    <p>{% if amount %} The value of your salary in {{tocountry}} is {{country_to_currency}} {{amount}} {% endif %}</p>
+   
+    </div>
+    </form>  
+</body>
+</html>
